@@ -1,0 +1,6 @@
+configVersion: 1
+project: hleb
+---
+image: hello
+dockerfile: Dockerfile
+context: hello
