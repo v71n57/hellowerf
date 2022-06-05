@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: market
+  name: market
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: market
+  template:
+    metadata:
+      labels:
+        app: market
+    spec:
+      containers:
+      - image: {{ .Values.werf.image.market }}
+        name: market
+        ports:
+        - containerPort: 80
+          name: market
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: market
+  name: market
+spec:
+  ports:
+  - name: "market-service"
+    port: 80
+  selector:
+    app: market

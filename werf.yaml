@@ -1,0 +1,6 @@
+configVersion: 1
+project: bfmarket-app
+---
+image: market
+dockerfile: Dockerfile
+context: market
