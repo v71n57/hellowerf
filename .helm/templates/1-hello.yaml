@@ -30,7 +30,7 @@ metadata:
   name: hello
 spec:
   ports:
-  - name: "hello-service"
+  - name: hello-service
     port: 80
   selector:
     app: hello
